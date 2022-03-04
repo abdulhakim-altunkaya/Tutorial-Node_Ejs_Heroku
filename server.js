@@ -6,6 +6,7 @@ const path = require("path");
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
+app.use("/assets", express.static("public"));
 app.use(express.static(path.join(__dirname, './public')));
 
 app.get("/", (req, res) => {
